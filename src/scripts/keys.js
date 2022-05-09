@@ -2,584 +2,947 @@ export default [
   {
     Backquote: {
       en: {
-        value: '`',
-        shift: '~'
+        caseDown: '`',
+        caseUp: '~',
+        caps: '`',
+        shiftCaps: '~'
       },
       ru: {
-        value: 'ё',
-        shift: 'Ё'
-      },
-      colored: true
+        caseDown: 'ё',
+        caseUp: 'Ё',
+        caps: 'Ё',
+        shiftCaps: 'ё'
+      }
     },
     Digit1: {
       en: {
-        value: '1',
-        shift: '!'
+        caseDown: '1',
+        caseUp: '!',
+        caps: '1',
+        shiftCaps: '!'
       },
       ru: {
-        value: '1',
-        shift: '!'
+        caseDown: '1',
+        caseUp: '!',
+        caps: '1',
+        shiftCaps: '!'
       }
     },
     Digit2: {
       en: {
-        value: '2',
-        shift: '@'
+        caseDown: '2',
+        caseUp: '@',
+        caps: '2',
+        shiftCaps: '@'
       },
       ru: {
-        value: '2',
-        shift: '"'
+        caseDown: '2',
+        caseUp: '"',
+        caps: '2',
+        shiftCaps: '"'
       }
     },
     Digit3: {
       en: {
-        value: '3',
-        shift: '#'
+        caseDown: '3',
+        caseUp: '#',
+        caps: '3',
+        shiftCaps: '#'
       },
       ru: {
-        value: '3',
-        shift: '№'
+        caseDown: '3',
+        caseUp: '№',
+        caps: '3',
+        shiftCaps: '№'
       }
     },
     Digit4: {
       en: {
-        value: '4',
-        shift: '$'
+        caseDown: '4',
+        caseUp: '$',
+        caps: '4',
+        shiftCaps: '$'
       },
       ru: {
-        value: '4',
-        shift: ';'
+        caseDown: '4',
+        caseUp: ';',
+        caps: '4',
+        shiftCaps: ';'
       }
     },
     Digit5: {
       en: {
-        value: '5',
-        shift: '%'
+        caseDown: '5',
+        caseUp: '%',
+        caps: '5',
+        shiftCaps: '%'
       },
       ru: {
-        value: '5',
-        shift: '%'
+        caseDown: '5',
+        caseUp: '%',
+        caps: '5',
+        shiftCaps: '%'
       }
     },
     Digit6: {
       en: {
-        value: '6',
-        shift: '^'
+        caseDown: '6',
+        caseUp: '^',
+        caps: '6',
+        shiftCaps: '^'
       },
       ru: {
-        value: '6',
-        shift: ':'
+        caseDown: '6',
+        caseUp: ':',
+        caps: '6',
+        shiftCaps: ':'
       }
     },
     Digit7: {
       en: {
-        value: '7',
-        shift: '&'
+        caseDown: '7',
+        caseUp: '&',
+        caps: '7',
+        shiftCaps: '&'
       },
       ru: {
-        value: '7',
-        shift: '?'
+        caseDown: '7',
+        caseUp: '?',
+        caps: '7',
+        shiftCaps: '?'
       }
     },
     Digit8: {
       en: {
-        value: '8',
-        shift: '*'
+        caseDown: '8',
+        caseUp: '*',
+        caps: '8',
+        shiftCaps: '*'
       },
       ru: {
-        value: '8',
-        shift: '*'
+        caseDown: '8',
+        caseUp: '*',
+        caps: '8',
+        shiftCaps: '*'
       }
     },
     Digit9: {
       en: {
-        value: '9',
-        shift: '('
+        caseDown: '9',
+        caseUp: '(',
+        caps: '9',
+        shiftCaps: '('
       },
       ru: {
-        value: '9',
-        shift: '('
+        caseDown: '9',
+        caseUp: '(',
+        caps: '9',
+        shiftCaps: '('
       }
     },
     Digit0: {
       en: {
-        value: '0',
-        shift: ')'
+        caseDown: '0',
+        caseUp: ')',
+        caps: '0',
+        shiftCaps: ')'
       },
       ru: {
-        value: '0',
-        shift: ')'
+        caseDown: '0',
+        caseUp: ')',
+        caps: '0',
+        shiftCaps: ')'
       }
     },
     Minus: {
       en: {
-        value: '-',
-        shift: '_'
+        caseDown: '-',
+        caseUp: '_',
+        caps: '-',
+        shiftCaps: '_'
       },
       ru: {
-        value: '-',
-        shift: '_'
+        caseDown: '-',
+        caseUp: '_',
+        caps: '-',
+        shiftCaps: '_'
       }
     },
     Equal: {
       en: {
-        value: '=',
-        shift: '+'
+        caseDown: '=',
+        caseUp: '+',
+        caps: '=',
+        shiftCaps: '+'
       },
       ru: {
-        value: '=',
-        shift: '+'
+        caseDown: '=',
+        caseUp: '+',
+        caps: '=',
+        shiftCaps: '+'
       }
     },
     Backspace: {
       en: {
-        value: 'Backspace',
-        shift: 'Backspace'
+        caseDown: 'Backspace',
+        caseUp: 'Backspace',
+        caps: 'Backspace',
+        shiftCaps: 'Backspace'
       },
       ru: {
-        value: 'Backspace',
-        shift: 'Backspace'
+        caseDown: 'Backspace',
+        caseUp: 'Backspace',
+        caps: 'Backspace',
+        shiftCaps: 'Backspace'
       },
-      colored: true
+      colored: true,
+      isShow: false
     }
   },
   {
     Tab: {
       en: {
-        value: 'Tab'
+        caseDown: 'Tab',
+        caseUp: 'Tab',
+        caps: 'Tab',
+        shiftCaps: 'Tab'
       },
       ru: {
-        value: 'Tab'
+        caseDown: 'Tab',
+        caseUp: 'Tab',
+        caps: 'Tab',
+        shiftCaps: 'Tab'
       },
-      colored: true
+      colored: true,
+      isShow: false
     },
     KeyQ: {
       en: {
-        value: 'q'
+        caseDown: 'q',
+        caseUp: 'Q',
+        caps: 'Q',
+        shiftCaps: 'q'
       },
       ru: {
-        value: 'й'
+        caseDown: 'й',
+        caseUp: 'Й',
+        caps: 'Й',
+        shiftCaps: 'й'
       }
     },
     KeyW: {
       en: {
-        value: 'w'
+        caseDown: 'w',
+        caseUp: 'W',
+        caps: 'W',
+        shiftCaps: 'w'
       },
       ru: {
-        value: 'ц'
+        caseDown: 'ц',
+        caseUp: 'Ц',
+        caps: 'Ц',
+        shiftCaps: 'ц'
       }
     },
     KeyE: {
       en: {
-        value: 'e'
+        caseDown: 'e',
+        caseUp: 'E',
+        caps: 'E',
+        shiftCaps: 'e'
       },
       ru: {
-        value: 'у'
+        caseDown: 'у',
+        caseUp: 'Y',
+        caps: 'Y',
+        shiftCaps: 'у'
       }
     },
     KeyR: {
       en: {
-        value: 'r'
+        caseDown: 'r',
+        caseUp: 'R',
+        caps: 'R',
+        shiftCaps: 'r'
       },
       ru: {
-        value: 'к'
+        caseDown: 'к',
+        caseUp: 'К',
+        caps: 'К',
+        shiftCaps: 'к'
       }
     },
     KeyT: {
       en: {
-        value: 't'
+        caseDown: 't',
+        caseUp: 'T',
+        caps: 'T',
+        shiftCaps: 't'
       },
       ru: {
-        value: 'е'
+        caseDown: 'е',
+        caseUp: 'Е',
+        caps: 'Е',
+        shiftCaps: 'е'
       }
     },
     KeyY: {
       en: {
-        value: 'y'
+        caseDown: 'y',
+        caseUp: 'Y',
+        caps: 'Y',
+        shiftCaps: 'y'
       },
       ru: {
-        value: 'н'
+        caseDown: 'н',
+        caseUp: 'Н',
+        caps: 'Н',
+        shiftCaps: 'н'
       }
     },
     KeyU: {
       en: {
-        value: 'u'
+        caseDown: 'u',
+        caseUp: 'U',
+        caps: 'U',
+        shiftCaps: 'u'
       },
       ru: {
-        value: 'г'
+        caseDown: 'г',
+        caseUp: 'Г',
+        caps: 'Г',
+        shiftCaps: 'г'
       }
     },
     KeyI: {
       en: {
-        value: 'i'
+        caseDown: 'i',
+        caseUp: 'I',
+        caps: 'I',
+        shiftCaps: 'i'
       },
       ru: {
-        value: 'ш'
+        caseDown: 'ш',
+        caseUp: 'Ш',
+        caps: 'Ш',
+        shiftCaps: 'ш'
       }
     },
     KeyO: {
       en: {
-        value: 'O'
+        caseDown: 'o',
+        caseUp: 'O',
+        caps: 'O',
+        shiftCaps: 'o'
       },
       ru: {
-        value: 'щ'
+        caseDown: 'щ',
+        caseUp: 'Щ',
+        caps: 'Щ',
+        shiftCaps: 'щ'
       }
     },
     KeyP: {
       en: {
-        value: 'P'
+        caseDown: 'p',
+        caseUp: 'P',
+        caps: 'P',
+        shiftCaps: 'p'
       },
       ru: {
-        value: 'з'
+        caseDown: 'з',
+        caseUp: 'З',
+        caps: 'З',
+        shiftCaps: 'з'
       }
     },
     BracketLeft: {
       en: {
-        value: '[',
-        shift: '{'
+        caseDown: '[',
+        caseUp: '{',
+        caps: '[',
+        shiftCaps: '{'
       },
       ru: {
-        value: 'х'
+        caseDown: 'х',
+        caseUp: 'Х',
+        caps: 'Х',
+        shiftCaps: 'х'
       }
     },
     BracketRight: {
       en: {
-        value: ']',
-        shift: '{'
+        caseDown: ']',
+        caseUp: '}',
+        caps: ']',
+        shiftCaps: '}'
       },
       ru: {
-        value: 'ъ'
+        caseDown: 'ъ',
+        caseUp: 'Ъ',
+        caps: 'Ъ',
+        shiftCaps: 'ъ'
       }
     },
     Backslash: {
       en: {
-        value: '\\',
-        shift: '|'
+        caseDown: '\\',
+        caseUp: '|',
+        caps: '\\',
+        shiftCaps: '|'
       },
       ru: {
-        value: '\\',
-        shift: '/'
+        caseDown: '\\',
+        caseUp: '/',
+        caps: '\\',
+        shiftCaps: '/'
       }
     },
     Delete: {
       en: {
-        value: 'Del'
+        caseDown: 'Del',
+        caseUp: 'Del',
+        caps: 'Del',
+        shiftCaps: 'Del'
       },
       ru: {
-        value: 'Del'
+        caseDown: 'Del',
+        caseUp: 'Del',
+        caps: 'Del',
+        shiftCaps: 'Del'
       },
-      colored: true
+      colored: true,
+      isShow: false
     }
   },
   {
     CapsLock: {
       en: {
-        value: 'Caps Lock'
+        caseDown: 'CapsLock',
+        caseUp: 'CapsLock',
+        caps: 'CapsLock',
+        shiftCaps: 'CapsLock'
       },
       ru: {
-        value: 'Caps Lock'
+        caseDown: 'CapsLock',
+        caseUp: 'CapsLock',
+        caps: 'CapsLock',
+        shiftCaps: 'CapsLock'
       },
-      colored: true
+      colored: true,
+      isShow: false
     },
     KeyA: {
       en: {
-        value: 'a'
+        caseDown: 'a',
+        caseUp: 'A',
+        caps: 'A',
+        shiftCaps: 'a'
       },
       ru: {
-        value: 'ф'
+        caseDown: 'ф',
+        caseUp: 'Ф',
+        caps: 'Ф',
+        shiftCaps: 'ф'
       }
     },
     KeyS: {
       en: {
-        value: 's'
+        caseDown: 's',
+        caseUp: 'S',
+        caps: 'S',
+        shiftCaps: 's'
       },
       ru: {
-        value: 'ы'
+        caseDown: 'ы',
+        caseUp: 'Ы',
+        caps: 'Ы',
+        shiftCaps: 'ы'
       }
     },
     KeyD: {
       en: {
-        value: 'd'
+        caseDown: 'd',
+        caseUp: 'D',
+        caps: 'D',
+        shiftCaps: 'd'
       },
       ru: {
-        value: 'в'
+        caseDown: 'в',
+        caseUp: 'В',
+        caps: 'В',
+        shiftCaps: 'в'
       }
     },
     KeyF: {
       en: {
-        value: 'f'
+        caseDown: 'f',
+        caseUp: 'F',
+        caps: 'F',
+        shiftCaps: 'f'
       },
       ru: {
-        value: 'а'
+        caseDown: 'а',
+        caseUp: 'А',
+        caps: 'А',
+        shiftCaps: 'а'
       }
     },
     KeyG: {
       en: {
-        value: 'g'
+        caseDown: 'g',
+        caseUp: 'G',
+        caps: 'G',
+        shiftCaps: 'g'
       },
       ru: {
-        value: 'п'
+        caseDown: 'п',
+        caseUp: 'П',
+        caps: 'П',
+        shiftCaps: 'п'
       }
     },
     KeyH: {
       en: {
-        value: 'h'
+        caseDown: 'h',
+        caseUp: 'H',
+        caps: 'H',
+        shiftCaps: 'h'
       },
       ru: {
-        value: 'р'
+        caseDown: 'р',
+        caseUp: 'Р',
+        caps: 'Р',
+        shiftCaps: 'р'
       }
     },
     KeyJ: {
       en: {
-        value: 'j'
+        caseDown: 'j',
+        caseUp: 'J',
+        caps: 'J',
+        shiftCaps: 'j'
       },
       ru: {
-        value: 'о'
+        caseDown: 'о',
+        caseUp: 'О',
+        caps: 'О',
+        shiftCaps: 'о'
       }
     },
     KeyK: {
       en: {
-        value: 'k'
+        caseDown: 'k',
+        caseUp: 'K',
+        caps: 'K',
+        shiftCaps: 'k'
       },
       ru: {
-        value: 'л'
+        caseDown: 'л',
+        caseUp: 'Л',
+        caps: 'Л',
+        shiftCaps: 'л'
       }
     },
     KeyL: {
       en: {
-        value: 'l'
+        caseDown: 'l',
+        caseUp: 'L',
+        caps: 'L',
+        shiftCaps: 'l'
       },
       ru: {
-        value: 'д'
+        caseDown: 'д',
+        caseUp: 'Д',
+        caps: 'Д',
+        shiftCaps: 'д'
       }
     },
     Semicolon: {
       en: {
-        value: ';',
-        shift: ':'
+        caseDown: ';',
+        caseUp: ':',
+        caps: ';',
+        shiftCaps: ':'
       },
       ru: {
-        value: 'ж'
+        caseDown: 'ж',
+        caseUp: 'Ж',
+        caps: 'Ж',
+        shiftCaps: 'ж'
       }
     },
     Quote: {
       en: {
-        value: '\'',
-        shift: '"'
+        caseDown: "'",
+        caseUp: '"',
+        caps: "'",
+        shiftCaps: '"'
       },
       ru: {
-        value: 'э'
+        caseDown: 'э',
+        caseUp: 'Э',
+        caps: 'Э',
+        shiftCaps: 'э'
       }
     },
     Enter: {
       en: {
-        value: 'Enter'
+        caseDown: 'Enter',
+        caseUp: 'Enter',
+        caps: 'Enter',
+        shiftCaps: 'Enter'
       },
       ru: {
-        value: 'Enter'
+        caseDown: 'Enter',
+        caseUp: 'Enter',
+        caps: 'Enter',
+        shiftCaps: 'Enter'
       },
-      colored: true
+      colored: true,
+      isShow: false
     }
   },
   {
     ShiftLeft: {
       en: {
-        value: 'Shift'
+        caseDown: 'Shift',
+        caseUp: 'Shift',
+        caps: 'Shift',
+        shiftCaps: 'Shift'
       },
       ru: {
-        value: 'Shift'
+        caseDown: 'Shift',
+        caseUp: 'Shift',
+        caps: 'Shift',
+        shiftCaps: 'Shift'
       },
-      colored: true
+      colored: true,
+      isShow: false
     },
     Backslash: {
       en: {
-        value: '\\'
+        caseDown: '\\',
+        caseUp: '|',
+        caps: '\\',
+        shiftCaps: '|'
       },
       ru: {
-        value: '\\'
+        caseDown: '\\',
+        caseUp: '/',
+        caps: '\\',
+        shiftCaps: '/'
       }
     },
     KeyZ: {
       en: {
-        value: 'z'
+        caseDown: 'z',
+        caseUp: 'Z',
+        caps: 'Z',
+        shiftCaps: 'z'
       },
       ru: {
-        value: 'я'
+        caseDown: 'я',
+        caseUp: 'Я',
+        caps: 'Я',
+        shiftCaps: 'я'
       }
     },
     KeyX: {
       en: {
-        value: 'x'
+        caseDown: 'x',
+        caseUp: 'X',
+        caps: 'X',
+        shiftCaps: 'x'
       },
       ru: {
-        value: 'ч'
+        caseDown: 'ч',
+        caseUp: 'Ч',
+        caps: 'Ч',
+        shiftCaps: 'ч'
       }
     },
     KeyC: {
       en: {
-        value: 'c'
+        caseDown: 'c',
+        caseUp: 'C',
+        caps: 'C',
+        shiftCaps: 'c'
       },
       ru: {
-        value: 'с'
+        caseDown: 'с',
+        caseUp: 'С',
+        caps: 'С',
+        shiftCaps: 'с'
       }
     },
     KeyV: {
       en: {
-        value: 'v'
+        caseDown: 'v',
+        caseUp: 'V',
+        caps: 'V',
+        shiftCaps: 'v'
       },
       ru: {
-        value: 'м'
+        caseDown: 'м',
+        caseUp: 'М',
+        caps: 'М',
+        shiftCaps: 'м'
       }
     },
     KeyB: {
       en: {
-        value: 'b'
+        caseDown: 'b',
+        caseUp: 'B',
+        caps: 'B',
+        shiftCaps: 'b'
       },
       ru: {
-        value: 'и'
+        caseDown: 'и',
+        caseUp: 'И',
+        caps: 'И',
+        shiftCaps: 'и'
       }
     },
     KeyN: {
       en: {
-        value: 'n'
+        caseDown: 'n',
+        caseUp: 'N',
+        caps: 'N',
+        shiftCaps: 'n'
       },
       ru: {
-        value: 'т'
+        caseDown: 'т',
+        caseUp: 'Т',
+        caps: 'Т',
+        shiftCaps: 'т'
       }
     },
     KeyM: {
       en: {
-        value: 'm'
+        caseDown: 'm',
+        caseUp: 'M',
+        caps: 'M',
+        shiftCaps: 'm'
       },
       ru: {
-        value: 'ь'
+        caseDown: 'ь',
+        caseUp: 'Ь',
+        caps: 'Ь',
+        shiftCaps: 'ь'
       }
     },
-    Сomma: {
+    Comma: {
       en: {
-        value: ',',
-        shift: '<'
+        caseDown: ',',
+        caseUp: '<',
+        caps: ',',
+        shiftCaps: '<'
       },
       ru: {
-        value: 'б'
+        caseDown: 'б',
+        caseUp: 'Б',
+        caps: 'Б',
+        shiftCaps: 'б'
       }
     },
     Period: {
       en: {
-        value: '.',
-        shift: '>'
+        caseDown: '.',
+        caseUp: '>',
+        caps: '.',
+        shiftCaps: '>'
       },
       ru: {
-        value: 'ю'
+        caseDown: 'ю',
+        caseUp: 'Ю',
+        caps: 'Ю',
+        shiftCaps: 'ю'
       }
     },
     Slash: {
       en: {
-        value: '/',
-        shift: '?'
+        caseDown: '/',
+        caseUp: '?',
+        caps: '/',
+        shiftCaps: '?'
       },
       ru: {
-        value: '.',
-        shift: ','
+        caseDown: '.',
+        caseUp: ',',
+        caps: '.',
+        shiftCaps: ','
       }
     },
     ArrowUp: {
       en: {
-        value: '↑'
+        caseDown: '↑',
+        caseUp: '↑',
+        caps: '↑',
+        shiftCaps: '↑'
       },
       ru: {
-        value: '↑'
+        caseDown: '↑',
+        caseUp: '↑',
+        caps: '↑',
+        shiftCaps: '↑'
       },
       colored: true
     },
     ShiftRight: {
       en: {
-        value: 'Shift'
+        caseDown: 'Shift',
+        caseUp: 'Shift',
+        caps: 'Shift',
+        shiftCaps: 'Shift'
       },
       ru: {
-        value: 'Shift'
+        caseDown: 'Shift',
+        caseUp: 'Shift',
+        caps: 'Shift',
+        shiftCaps: 'Shift'
       },
-      colored: true
+      colored: true,
+      isShow: false
     }
   },
   {
     ControlLeft: {
       en: {
-        value: 'Ctrl'
+        caseDown: 'Ctrl',
+        caseUp: 'Ctrl',
+        caps: 'Ctrl',
+        shiftCaps: 'Ctrl'
       },
       ru: {
-        value: 'Ctrl'
+        caseDown: 'Ctrl',
+        caseUp: 'Ctrl',
+        caps: 'Ctrl',
+        shiftCaps: 'Ctrl'
       },
-      colored: true
+      colored: true,
+      isShow: false
     },
     MetaLeft: {
       en: {
-        value: 'Win'
+        caseDown: 'Win',
+        caseUp: 'Win',
+        caps: 'Win',
+        shiftCaps: 'Win'
       },
       ru: {
-        value: 'Win'
+        caseDown: 'Win',
+        caseUp: 'Win',
+        caps: 'Win',
+        shiftCaps: 'Win'
       },
-      colored: true
+      colored: true,
+      isShow: false
     },
     AltLeft: {
       en: {
-        value: 'Alt'
+        caseDown: 'Alt',
+        caseUp: 'Alt',
+        caps: 'Alt',
+        shiftCaps: 'Alt'
       },
       ru: {
-        value: 'Alt'
+        caseDown: 'Alt',
+        caseUp: 'Alt',
+        caps: 'Alt',
+        shiftCaps: 'Alt'
       },
-      colored: true
+      colored: true,
+      isShow: false
     },
     Space: {
       en: {
-        value: ' '
+        caseDown: ' ',
+        caseUp: ' ',
+        caps: ' ',
+        shiftCaps: ' '
       },
       ru: {
-        value: ' '
+        caseDown: ' ',
+        caseUp: ' ',
+        caps: ' ',
+        shiftCaps: ' '
       }
     },
     AltRight: {
       en: {
-        value: 'Alt'
+        caseDown: 'Alt',
+        caseUp: 'Alt',
+        caps: 'Alt',
+        shiftCaps: 'Alt'
       },
       ru: {
-        value: 'Alt'
+        caseDown: 'Alt',
+        caseUp: 'Alt',
+        caps: 'Alt',
+        shiftCaps: 'Alt'
       },
-      colored: true
+      colored: true,
+      isShow: false
     },
     ControlRight: {
       en: {
-        value: 'Ctrl'
+        caseDown: 'Ctrl',
+        caseUp: 'Ctrl',
+        caps: 'Ctrl',
+        shiftCaps: 'Ctrl'
       },
       ru: {
-        value: 'Ctrl'
+        caseDown: 'Ctrl',
+        caseUp: 'Ctrl',
+        caps: 'Ctrl',
+        shiftCaps: 'Ctrl'
       },
-      colored: true
+      colored: true,
+      isShow: false
     },
     ArrowLeft: {
       en: {
-        value: '←'
+        caseDown: '←',
+        caseUp: '←',
+        caps: '←',
+        shiftCaps: '←'
       },
       ru: {
-        value: '←'
+        caseDown: '←',
+        caseUp: '←',
+        caps: '←',
+        shiftCaps: '←'
       },
       colored: true
     },
     ArrowDown: {
       en: {
-        value: '↓'
+        caseDown: '↓',
+        caseUp: '↓',
+        caps: '↓',
+        shiftCaps: '↓'
       },
       ru: {
-        value: '↓'
+        caseDown: '↓',
+        caseUp: '↓',
+        caps: '↓',
+        shiftCaps: '↓'
       },
       colored: true
     },
     ArrowRight: {
       en: {
-        value: '→'
+        caseDown: '→',
+        caseUp: '→',
+        caps: '→',
+        shiftCaps: '→'
       },
       ru: {
-        value: '→'
+        caseDown: '→',
+        caseUp: '→',
+        caps: '→',
+        shiftCaps: '→'
       },
       colored: true
     }

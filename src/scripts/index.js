@@ -2,6 +2,8 @@ import '../assets/styles/style.scss';
 import createKeys from './createKeys';
 
 let lang = localStorage.getItem('lang') || 'en';
+let isCaps = false;
+let isShift = false;
 
 const createTitle = () => {
   const title = document.createElement('h1');
@@ -14,7 +16,7 @@ const createTitle = () => {
 const createTextarea = () => {
   const textarea = document.createElement('textarea');
   textarea.classList.add('textarea');
-  textarea.setAttribute('autofocus', 'autofocus');
+  // textarea.setAttribute('autofocus', 'autofocus');
 
   return textarea;
 };
@@ -41,8 +43,7 @@ const createSpecification = () => {
 const createKeyboard = () => {
   const keyboardContainer = document.createElement('div');
   keyboardContainer.classList.add('keyboard');
-  console.log(lang);
-  keyboardContainer.append(...createKeys(lang));
+  keyboardContainer.append(...createKeys(lang, 'caseDown'));
 
   return keyboardContainer;
 };
@@ -56,11 +57,9 @@ const createContainer = () => {
 };
 
 const keyboardHandler = (event) => {
-  event.preventDefault();
-  // const container = document.querySelector('.container');
   const keyboard = document.querySelector('.keyboard');
-  // const keyboardKey = document.querySelectorAll('.keyboard__key');
-  // const textarea = document.querySelector('keyboard__textarea');
+  const keyboardKeys = document.querySelectorAll('.keyboard__key');
+  const textarea = document.querySelector('.textarea');
 
   if (event.ctrlKey && event.altKey && event.type === 'keydown') {
     if (lang === 'en') {
@@ -70,7 +69,83 @@ const keyboardHandler = (event) => {
     }
 
     keyboard.textContent = '';
-    keyboard.append(...createKeys(lang));
+    keyboard.append(...createKeys(lang, 'caseDown'));
+  }
+
+  if (event.code === 'Tab') {
+    event.preventDefault();
+  }
+
+  if (event.code === 'Tab' && event.type === 'keyup') {
+    textarea.value += '\t';
+  }
+
+  if (event.code === 'CapsLock' && event.type === 'keyup') {
+    if (!isCaps) {
+      keyboard.textContent = '';
+      keyboard.append(...createKeys(lang, 'caps'));
+    } else {
+      keyboard.textContent = '';
+      keyboard.append(...createKeys(lang, 'caseDown'));
+    }
+
+    isCaps = !isCaps;
+  }
+
+  if (event.code === 'ShiftLeft' && event.type === 'keydown') {
+    if (!isShift) {
+      keyboard.textContent = '';
+      keyboard.append(...createKeys(lang, 'caseUp'));
+    } else {
+      keyboard.textContent = '';
+      keyboard.append(...createKeys(lang, 'caseDown'));
+    }
+  }
+
+  if (event.code === 'ShiftLeft' && event.type === 'keyup') {
+    if (!isShift) {
+      keyboard.textContent = '';
+      keyboard.append(...createKeys(lang, 'caseDown'));
+    }
+
+    isShift = !isShift;
+  }
+
+  keyboardKeys.forEach(key => {
+    if (key.classList.contains(event.code) && event.type === 'keydown') {
+      key.classList.add('keyboard__active');
+    }
+
+    if (key.classList.contains('keyboard__active') && event.type === 'keyup') {
+      setTimeout(() => {
+        key.classList.remove('keyboard__active');
+      }, 100);
+    }
+  });
+};
+
+const clickHandler = (event) => {
+  const textarea = document.querySelector('.textarea');
+  const keyboard = document.querySelector('.keyboard');
+  textarea.focus();
+
+  if (event.currentTarget.classList.contains('Enter') && event.type === 'mousedown') textarea.value += '\n';
+  if (event.currentTarget.classList.contains('Tab') && event.type === 'mousedown') textarea.value += '\t';
+
+  if (event.target.textContent === 'CapsLock' && event.type === 'mouseup') {
+    if (!isCaps) {
+      keyboard.textContent = '';
+      keyboard.append(...createKeys(lang, 'caps'));
+    } else {
+      keyboard.textContent = '';
+      keyboard.append(...createKeys(lang, 'caseDown'));
+    }
+
+    isCaps = !isCaps;
+  }
+
+  if (event.type === 'mouseup' && !event.target.classList.contains('control')) {
+    textarea.value += event.target.textContent;
   }
 };
 
@@ -78,3 +153,5 @@ window.addEventListener('beforeunload', () => localStorage.setItem('lang', lang)
 window.addEventListener('DOMContentLoaded', createContainer());
 window.addEventListener('keydown', keyboardHandler);
 window.addEventListener('keyup', keyboardHandler);
+document.querySelectorAll('.keyboard__key').forEach(key => key.addEventListener('mousemove', clickHandler));
+document.querySelectorAll('.keyboard__key').forEach(key => key.addEventListener('mouseup', clickHandler));
