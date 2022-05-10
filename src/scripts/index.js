@@ -165,19 +165,11 @@ const clickHandler = (event) => {
 
   if (event.target.classList.contains('ShiftLeft') || event.target.classList.contains('ShiftRight')) {
     if (!isShift) {
-      if (!isShift) {
-        keyboard.textContent = '';
-        keyboard.append(...createKeys(lang, 'shiftCaps'));
-      } else {
-        keyboard.textContent = '';
-        keyboard.append(...createKeys(lang, 'caseDown'));
-      }
-    } else if (isShift) {
       keyboard.textContent = '';
-      keyboard.append(...createKeys(lang, 'caseDown'));
+      keyboard.append(...createKeys(lang, 'caseUp'));
     } else {
       keyboard.textContent = '';
-      keyboard.append(...createKeys(lang, 'shiftCaps'));
+      keyboard.append(...createKeys(lang, 'caseDown'));
     }
 
     isShift = !isShift;
