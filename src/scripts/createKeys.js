@@ -12,7 +12,11 @@ export default (lang, prop) => {
       key.classList.add(keyFromMap[0]);
       if (keyFromMap[1].colored) key.classList.add('keyboard__colored');
       key.textContent = keyFromMap[1][lang][prop];
-      if (keyFromMap[1].isShow === false) key.classList.add('control');
+      if (keyFromMap[1].isShow === false) {
+        key.classList.add('control');
+      } else {
+        key.classList.add('btn-showed');
+      }
       line.append(key);
     });
 
