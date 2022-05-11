@@ -94,12 +94,16 @@ const keyboardHandler = (event) => {
 
   if (event.code === 'ShiftLeft' && event.type === 'keydown') {
     if (event.repeat === false) {
-      if (!isShift) {
-        keyboard.textContent = '';
-        keyboard.append(...createKeys(lang, 'caseUp'));
-      } else {
-        keyboard.textContent = '';
-        keyboard.append(...createKeys(lang, 'caseDown'));
+      if (!isCaps) {
+        if (!isShift) {
+          keyboard.textContent = '';
+          keyboard.append(...createKeys(lang, 'caseUp'));
+        }
+      } else if (isCaps) {
+        if (!isShift) {
+          keyboard.textContent = '';
+          keyboard.append(...createKeys(lang, 'shiftCaps'));
+        }
       }
 
       isShift = !isShift;
@@ -113,6 +117,11 @@ const keyboardHandler = (event) => {
     } else {
       keyboard.textContent = '';
       keyboard.append(...createKeys(lang, 'caseDown'));
+    }
+
+    if (isCaps === true) {
+      keyboard.textContent = '';
+      keyboard.append(...createKeys(lang, 'caps'));
     }
 
     isShift = !isShift;
@@ -134,17 +143,69 @@ const keyboardHandler = (event) => {
 const clickHandler = (event) => {
   const textarea = document.querySelector('.textarea');
   const keyboard = document.querySelector('.keyboard');
+  let cursor = textarea.selectionStart;
+
+  const cursorHandler = (value, n) => {
+    if (textarea.selectionStart !== textarea.selectionEnd) {
+      let text = [...textarea.value];
+      text.splice(textarea.selectionStart, textarea.selectionEnd - textarea.selectionStart, value);
+      text = text.join('');
+      textarea.value = text;
+      cursor += n;
+      textarea.setSelectionRange(cursor, cursor);
+    } else {
+      textarea.setSelectionRange(cursor, cursor);
+      let text = [...textarea.value];
+      text.splice(cursor, 0, value);
+      text = text.join('');
+      textarea.value = text;
+      cursor += n;
+      textarea.setSelectionRange(cursor, cursor);
+    }
+  };
 
   if (event.target.classList.contains('Enter')) {
-    textarea.value += '\n';
+    cursorHandler('\n', 1);
   }
 
   if (event.target.classList.contains('Tab')) {
-    textarea.value += '\t';
+    cursorHandler('    ', 4);
   }
 
   if (event.target.classList.contains('Backspace')) {
-    textarea.value = textarea.value.slice(0, -1);
+    if (textarea.selectionStart !== textarea.selectionEnd) {
+      let text = [...textarea.value];
+      text.splice(textarea.selectionStart, textarea.selectionEnd - textarea.selectionStart);
+      text = text.join('');
+      textarea.value = text;
+      cursor -= 1;
+      textarea.setSelectionRange(cursor, cursor);
+    } else {
+      textarea.setSelectionRange(cursor, cursor);
+      let text = [...textarea.value];
+      text.splice(cursor - 1, 1);
+      text = text.join('');
+      textarea.value = text;
+      cursor -= 1;
+      textarea.setSelectionRange(cursor, cursor);
+    }
+  }
+
+  if (event.target.classList.contains('Delete')) {
+    if (textarea.selectionStart !== textarea.selectionEnd) {
+      let text = [...textarea.value];
+      text.splice(textarea.selectionStart, textarea.selectionEnd - textarea.selectionStart);
+      text = text.join('');
+      textarea.value = text;
+      textarea.setSelectionRange(cursor, cursor);
+    } else {
+      textarea.setSelectionRange(cursor, cursor);
+      let text = [...textarea.value];
+      text.splice(cursor, 1);
+      text = text.join('');
+      textarea.value = text;
+      textarea.setSelectionRange(cursor, cursor);
+    }
   }
 
   if (event.target.classList.contains('CapsLock')) {
@@ -160,16 +221,26 @@ const clickHandler = (event) => {
   }
 
   if (event.target.classList.contains('btn-showed')) {
-    textarea.value += event.target.textContent;
+    cursorHandler(event.target.textContent, 1);
   }
 
   if (event.target.classList.contains('ShiftLeft') || event.target.classList.contains('ShiftRight')) {
-    if (!isShift) {
-      keyboard.textContent = '';
-      keyboard.append(...createKeys(lang, 'caseUp'));
-    } else {
-      keyboard.textContent = '';
-      keyboard.append(...createKeys(lang, 'caseDown'));
+    if (!isCaps) {
+      if (!isShift) {
+        keyboard.textContent = '';
+        keyboard.append(...createKeys(lang, 'caseUp'));
+      } else if (isShift) {
+        keyboard.textContent = '';
+        keyboard.append(...createKeys(lang, 'caseDown'));
+      }
+    } else if (isCaps) {
+      if (!isShift) {
+        keyboard.textContent = '';
+        keyboard.append(...createKeys(lang, 'shiftCaps'));
+      } else if (isShift) {
+        keyboard.textContent = '';
+        keyboard.append(...createKeys(lang, 'caps'));
+      }
     }
 
     isShift = !isShift;
